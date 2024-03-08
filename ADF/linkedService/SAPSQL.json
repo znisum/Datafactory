@@ -1,0 +1,17 @@
+{
+	"name": "SAPSQL",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=SAP/SAP;initial catalog=ILNDB",
+			"userName": "azureuser",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI0MjM5ZWI3Mi1iNmFkLTQyNWYtOWY3Yy1jNjI5ZDc2Mjk5OWIiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "Selfhosted",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
