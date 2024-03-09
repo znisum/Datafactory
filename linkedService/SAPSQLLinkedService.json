@@ -1,0 +1,17 @@
+{
+	"name": "SAPSQLLinkedService",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "On prem SQL Server linked service",
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=SAP;initial catalog=ILNDB;user id=sa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI4MDBhOGJmMS1hMGJiLTQ0MDktOTkyZC04OTcyZGZlMWU1YzgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "selfhostedruntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
