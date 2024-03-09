@@ -1,0 +1,66 @@
+{
+	"name": "SQLDatasets",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SAPSQLLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "EQUIPO_ID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "NOMBRE_EQUIPO",
+				"type": "varchar"
+			},
+			{
+				"name": "MARCA",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "SERIE",
+				"type": "varchar"
+			},
+			{
+				"name": "LINEA",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "LUBRICACION",
+				"type": "bit"
+			},
+			{
+				"name": "INGRESADOPOR",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "MODIFICADOPOR",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "FECHAINGRESO",
+				"type": "smalldatetime",
+				"precision": 16,
+				"scale": 0
+			},
+			{
+				"name": "FECHAMODIFICACION",
+				"type": "smalldatetime",
+				"precision": 16,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "TBL_EQUIPOS"
+		}
+	}
+}
