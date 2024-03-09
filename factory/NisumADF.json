@@ -1,0 +1,9 @@
+{
+	"name": "NisumADF",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ac921e23-e174-41b0-bf54-e86b252ac8f5",
+		"tenantId": "06408ebc-5eb8-4b0d-827f-76dd3b58bc84"
+	}
+}
