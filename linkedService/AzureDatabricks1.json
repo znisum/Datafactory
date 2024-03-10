@@ -1,0 +1,21 @@
+{
+	"name": "AzureDatabricks1",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDatabricks",
+		"typeProperties": {
+			"domain": "https://adb-5510376177616865.5.azuredatabricks.net",
+			"authentication": "MSI",
+			"workspaceResourceId": "/subscriptions/d687d0fc-3f6b-4043-8090-3cbfe4f667da/resourceGroups/ADF/providers/Microsoft.Databricks/workspaces/Nisumdatabricks",
+			"newClusterNodeType": "Standard_DS3_v2",
+			"newClusterNumOfWorker": "2:4",
+			"newClusterVersion": "10.4.x-scala2.12",
+			"clusterOption": "Autoscaling",
+			"newClusterInitScripts": []
+		},
+		"connectVia": {
+			"referenceName": "selfhostedruntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
