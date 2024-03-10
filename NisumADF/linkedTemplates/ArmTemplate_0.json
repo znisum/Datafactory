@@ -79,6 +79,32 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/AzureDatabricks1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureDatabricks",
+				"typeProperties": {
+					"domain": "https://adb-5510376177616865.5.azuredatabricks.net",
+					"authentication": "MSI",
+					"workspaceResourceId": "/subscriptions/d687d0fc-3f6b-4043-8090-3cbfe4f667da/resourceGroups/ADF/providers/Microsoft.Databricks/workspaces/Nisumdatabricks",
+					"newClusterNodeType": "Standard_DS3_v2",
+					"newClusterNumOfWorker": "2:4",
+					"newClusterVersion": "10.4.x-scala2.12",
+					"clusterOption": "Autoscaling",
+					"newClusterInitScripts": []
+				},
+				"connectVia": {
+					"referenceName": "selfhostedruntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/integrationRuntimes/selfhostedruntime')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/SQLDatasets')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -334,6 +360,26 @@
 								"parameters": {}
 							}
 						]
+					},
+					{
+						"name": "DataBricksNotebook",
+						"type": "DatabricksNotebook",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"notebookPath": "/Repos"
+						},
+						"linkedServiceName": {
+							"referenceName": "AzureDatabricks1",
+							"type": "LinkedServiceReference"
+						}
 					}
 				],
 				"policy": {
@@ -342,7 +388,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SQLDatasets')]"
+				"[concat(variables('factoryId'), '/datasets/SQLDatasets')]",
+				"[concat(variables('factoryId'), '/linkedServices/AzureDatabricks1')]"
 			]
 		}
 	]
